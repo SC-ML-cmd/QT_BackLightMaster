@@ -13,6 +13,9 @@
 #LIBS += -L D:\Software\QT\opencvbulid3.40\x64\mingw\bin\libopencv_*.dll
 #LIBS += -L D:\Software\QT\opencvbulid3.40\x64\mingw\lib\libopencv_*.a
 
+
+
+
 #qin
 #INCLUDEPATH+=D:\sdk\MVS\Development\Includes
 #LIBS += D:\sdk\MVS\Development\Libraries\win64\MvCameraControl.lib
