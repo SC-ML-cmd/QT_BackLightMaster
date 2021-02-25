@@ -661,6 +661,10 @@ void MainWindow::on_actionPLC_2_triggered()//PLC连接
 ======================================================================*/
 void MainWindow::on_actionPLC_3_triggered()
 {
+    //点击PLC连接在log日志中标记
+    QDateTime current_date_time =QDateTime::currentDateTime();
+    QString current_date =current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz");
+    debug_msg("点击连接相机"+current_date);
     //关闭6个相机
     camera->Find_Device();
     if(camera->m_hDevHandle_1)
@@ -1169,7 +1173,7 @@ int MainWindow::detect_offine()
 
 //    d1 =QtConcurrent::run(this,&MainWindow::myFunc1);     //开白底检测线程
 
-    if( ==true && SaveSize == true)
+    if(autoSave==true && SaveSize == true)
     {
         debug_msg("保存检测原图像1_DefectNum1 == 0");
         QString savePath=imageSavePath;
@@ -1299,8 +1303,6 @@ int MainWindow::detect_offine()
 
     return 0;
 }
-
-
 
 /*====================================================================
 * 功能：拍照（在线）
@@ -3629,6 +3631,10 @@ void MainWindow::on_action_12_triggered()
 =========================================================*/
 void MainWindow::on_action_11_triggered()
 {
+    //点击批次设置在log日志中标记
+    QDateTime current_date_time =QDateTime::currentDateTime();
+    QString current_date =current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz");
+    debug_msg("点击批次设置"+current_date);
     if(ui->label_9->text()=="正在检测")
     {
         QMessageBox box(QMessageBox::Warning,"提示","正在检测，批次不可修改！");
